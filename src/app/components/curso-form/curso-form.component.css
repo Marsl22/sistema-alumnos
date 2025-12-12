@@ -1,0 +1,73 @@
+.card {
+  border-radius: 12px;
+  border: none;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.card-header {
+  border-radius: 12px 12px 0 0 !important;
+  padding: 1.5rem;
+}
+
+.form-label {
+  color: #495057;
+  margin-bottom: 0.5rem;
+}
+
+.form-control,
+textarea.form-control {
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #ced4da;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus,
+textarea.form-control:focus {
+  border-color: #198754;
+  box-shadow: 0 0 0 0.2rem rgba(25, 135, 84, 0.25);
+}
+
+.is-invalid {
+  border-color: #dc3545;
+}
+
+.invalid-feedback {
+  display: block;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.btn-lg {
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.shadow {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.alert-info {
+  background-color: #d1ecf1;
+  border-color: #bee5eb;
+  color: #0c5460;
+  border-radius: 8px;
+}
+
+.spinner-border-sm {
+  width: 1rem;
+  height: 1rem;
+}
+
+.btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+textarea.form-control {
+  resize: vertical;
+  min-height: 120px;
+}

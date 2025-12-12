@@ -1,0 +1,61 @@
+<div class="container py-4">
+  <div class="card shadow">
+    <div class="card-header bg-success text-white">
+      <h3 class="mb-0">{{ titulo }}</h3>
+    </div>
+
+    <div class="card-body">
+      <form [formGroup]="cursoForm" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+          <label class="form-label">Nombre del Curso *</label>
+          <input 
+            type="text" 
+            class="form-control" 
+            formControlName="nombre"
+            placeholder="Nombre del curso"
+            [class.is-invalid]="isFieldInvalid('nombre')">
+          @if (isFieldInvalid('nombre')) {
+            <div class="invalid-feedback">
+              {{ getErrorMessage('nombre') }}
+            </div>
+          }
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Descripción *</label>
+          <textarea 
+            class="form-control" 
+            formControlName="descripcion"
+            placeholder="Descripción del curso"
+            rows="4"
+            [class.is-invalid]="isFieldInvalid('descripcion')"></textarea>
+          @if (isFieldInvalid('descripcion')) {
+            <div class="invalid-feedback">
+              {{ getErrorMessage('descripcion') }}
+            </div>
+          }
+        </div>
+
+        <div class="d-flex justify-content-between mt-4">
+          <button 
+            type="button" 
+            class="btn btn-secondary"
+            (click)="volver()"
+            [disabled]="loading">
+            Cancelar
+          </button>
+          
+          <button 
+            type="submit" 
+            class="btn btn-success"
+            [disabled]="loading || cursoForm.invalid">
+            @if (loading) {
+              <span class="spinner-border spinner-border-sm me-2"></span>
+            }
+            {{ isEditMode ? 'Actualizar' : 'Guardar' }}
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

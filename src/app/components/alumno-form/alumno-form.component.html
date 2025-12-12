@@ -1,0 +1,126 @@
+<div class="container py-4">
+  <div class="card shadow">
+    <div class="card-header bg-primary text-white">
+      <h3 class="mb-0">{{ titulo }}</h3>
+    </div>
+
+    <div class="card-body">
+      <form [formGroup]="alumnoForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Nombre *</label>
+            <input 
+              type="text" 
+              class="form-control" 
+              formControlName="nombre"
+              placeholder="Nombre"
+              [class.is-invalid]="isFieldInvalid('nombre')">
+            @if (isFieldInvalid('nombre')) {
+              <div class="invalid-feedback">
+                {{ getErrorMessage('nombre') }}
+              </div>
+            }
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Apellido Paterno *</label>
+            <input 
+              type="text" 
+              class="form-control" 
+              formControlName="apellidoPaterno"
+              placeholder="Apellido Paterno"
+              [class.is-invalid]="isFieldInvalid('apellidoPaterno')">
+            @if (isFieldInvalid('apellidoPaterno')) {
+              <div class="invalid-feedback">
+                {{ getErrorMessage('apellidoPaterno') }}
+              </div>
+            }
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Apellido Materno *</label>
+            <input 
+              type="text" 
+              class="form-control" 
+              formControlName="apellidoMaterno"
+              placeholder="Apellido Materno"
+              [class.is-invalid]="isFieldInvalid('apellidoMaterno')">
+            @if (isFieldInvalid('apellidoMaterno')) {
+              <div class="invalid-feedback">
+                {{ getErrorMessage('apellidoMaterno') }}
+              </div>
+            }
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Edad *</label>
+            <input 
+              type="number" 
+              class="form-control" 
+              formControlName="edad"
+              placeholder="Edad"
+              [class.is-invalid]="isFieldInvalid('edad')">
+            @if (isFieldInvalid('edad')) {
+              <div class="invalid-feedback">
+                {{ getErrorMessage('edad') }}
+              </div>
+            }
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Matrícula *</label>
+            <input 
+              type="text" 
+              class="form-control" 
+              formControlName="matricula"
+              placeholder="Matrícula"
+              [class.is-invalid]="isFieldInvalid('matricula')">
+            @if (isFieldInvalid('matricula')) {
+              <div class="invalid-feedback">
+                {{ getErrorMessage('matricula') }}
+              </div>
+            }
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Curso *</label>
+            <select 
+              class="form-select" 
+              formControlName="cursoId"
+              [class.is-invalid]="isFieldInvalid('cursoId')">
+              <option value="">Selecciona un curso</option>
+              @for (curso of cursos; track curso.id) {
+                <option [value]="curso.id">{{ curso.nombre }}</option>
+              }
+            </select>
+            @if (isFieldInvalid('cursoId')) {
+              <div class="invalid-feedback">
+                {{ getErrorMessage('cursoId') }}
+              </div>
+            }
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-between mt-4">
+          <button 
+            type="button" 
+            class="btn btn-secondary"
+            (click)="volver()"
+            [disabled]="loading">
+            Cancelar
+          </button>
+          
+          <button 
+            type="submit" 
+            class="btn btn-primary"
+            [disabled]="loading || alumnoForm.invalid">
+            @if (loading) {
+              <span class="spinner-border spinner-border-sm me-2"></span>
+            }
+            {{ isEditMode ? 'Actualizar' : 'Guardar' }}
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
