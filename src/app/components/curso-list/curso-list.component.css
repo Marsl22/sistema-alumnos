@@ -1,0 +1,77 @@
+.card {
+  border-radius: 12px;
+  border: none;
+}
+
+.card-header {
+  border-radius: 12px 12px 0 0 !important;
+  padding: 1.5rem;
+}
+
+.table th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.table-hover tbody tr:hover {
+  background-color: #f1f3f5;
+  transition: background-color 0.2s ease;
+}
+
+.btn-group-sm > .btn {
+  padding: 0.35rem 0.6rem;
+  font-size: 0.875rem;
+}
+
+.input-group-text {
+  border-right: none;
+}
+
+.input-group .form-control {
+  border-left: none;
+}
+
+.input-group .form-control:focus {
+  border-color: #ced4da;
+  box-shadow: none;
+}
+
+.badge {
+  padding: 0.5em 0.75em;
+  font-weight: 500;
+}
+
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
+}
+
+.btn-info {
+  background-color: #17a2b8;
+  border-color: #17a2b8;
+  color: white;
+}
+
+.btn-info:hover {
+  background-color: #138496;
+  border-color: #117a8b;
+  color: white;
+}
+
+.btn-outline-primary {
+  color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+.btn-outline-primary:hover {
+  background-color: #0d6efd;
+  color: white;
+}
+
+.shadow {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
